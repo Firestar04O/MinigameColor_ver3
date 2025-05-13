@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class PlayerColorShapeController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private ColorShapeData playerData;
+    private SpriteRenderer spriteRenderer;
+    private void Awake()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        spriteRenderer.color = playerData.color;
+        spriteRenderer.sprite = playerData.sprite;
+    }
+    private void OnEnable()
+    {
+        ColorObject.OnChangeColor += UpdateColor;
+        ShapeObject.OnChangeShape += UpdateShape;
+    }
+    private void OnDisable()
+    {
+        ColorObject.OnChangeColor -= UpdateColor;
+        ShapeObject.OnChangeShape -= UpdateShape;
+    }
+    private void UpdateColor(Color newColor)
+    {
+        playerData.color = newColor;
+    }
+    private void UpdateShape(Sprite newSprite)
+    {
+        playerData.sprite = newSprite;
     }
 }

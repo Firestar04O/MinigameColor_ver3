@@ -2441,7 +2441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialname: Player
-  colorData: {fileID: 0}
+  colorData: {fileID: 11400000, guid: ae0926c9bf2588a45a35a7a2476c6b18, type: 2}
   meshRenderer: {fileID: 1054924606}
 --- !u!1 &1119913231
 GameObject:

@@ -17,10 +17,10 @@ public class CharacterController3D : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        myRB.velocity = new Vector3(movementInput.x * speed, myRB.velocity.y, movementInput.y * speed);
+        myRB.linearVelocity = new Vector3(movementInput.x * speed, myRB.linearVelocity.y, movementInput.y * speed);
         if (jumpInput)
         {
-            myRB.velocity = new Vector3(myRB.velocity.x, myRB.velocity.y + jumpForce, myRB.velocity.z);
+            myRB.linearVelocity = new Vector3(myRB.linearVelocity.x, myRB.linearVelocity.y + jumpForce, myRB.linearVelocity.z);
             jumpInput = false;
         }
     }

@@ -14,7 +14,7 @@ public class CharacterController2D : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        myRgbd2d.velocity = movementInput * speed;
+        myRgbd2d.linearVelocity = movementInput * speed;
     }
     public void OnMoving(InputAction.CallbackContext context)
     {
